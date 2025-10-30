@@ -1,16 +1,91 @@
-# React + Vite
+# 🛍️ Vibe Commerce | Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Mock E-Commerce Cart project built for the **Vibe Commerce screening task**.  
+It provides a responsive UI where users can browse products, add/remove items from the cart, view totals, and perform a mock checkout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧾 Screenshots
+ <img width="1892" height="869" alt="Screenshot 2025-10-30 134131" src="https://github.com/user-attachments/assets/434d7f9b-3ad1-43ae-8f6b-e42fd2893245" />
+<img width="1898" height="868" alt="Screenshot 2025-10-30 134225" src="https://github.com/user-attachments/assets/a471cb74-4bcf-4c2e-8dfb-6c4b343024ec" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+> 📸 Place your screenshots in a `/screenshots` folder inside the frontend root.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- Product listing grid fetched from backend
+- Add / Remove / Update cart items
+- Cart total calculation with Redux
+- Mock checkout form with name & email
+- Responsive and clean UI (TailwindCSS)
+- Modal-based cart view
+- Axios integrated for API calls
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **Redux Toolkit**
+- **Axios**
+- **Tailwind CSS**
+- **React Portal** for modal implementation
+
+---
+
+## 📦 Folder Structure
+   ```bash
+frontend/
+┣ src/
+┃ ┣ components/
+┃ ┣ store/
+┃ ┣ pages/
+┃ ┗ App.jsx
+┣ public/
+┗ package.json
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone repository**
+  ```bash
+   git clone https://github.com/your-username/mock-ecom-cart-frontend.git
+   cd mock-ecom-cart-frontend
+```
+
+2. **Install dependencies**
+ ```bash
+npm install
+```
+
+4. **Start development server**
+```bash
+npm run dev
+```
+
+
+## 🔗 Backend API Used
+```bash
+Base URL: http://localhost:5000/api
+
+Endpoint	Method	Description
+/products	GET	Fetch all products
+/cart/add	POST	Add item to cart
+/cart/update/:id	PATCH	Update quantity
+/cart/delete/:id	DELETE	Delete item
+/cart/clear	DELETE	Clear all cart items
+
+```
+## 🧠 Key Learning
+
+This project demonstrates a full-stack integration using React (frontend), Node.js + Express (backend), and MongoDB for persistence. It simulates real e-commerce flow with CRUD operations and state management using Redux.
+
+## 🧩 Author
+
+Rajat Sharma
