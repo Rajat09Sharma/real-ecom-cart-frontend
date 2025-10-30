@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { createPortal } from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartCheckout, cartUpdate, updatedCartItem } from "../store/customCartActions";
 
 
 export const CartModal = ({ open, onClose }) => {
-
-    const [loading, setLoading] = useState(false);
-    const [checkout, setCheckout] = useState();
-    const [error, setError] = useState(false);
 
     const cartItems = useSelector(state => state.cart.items);
     const notify = useSelector(state => state.modal.notify);
