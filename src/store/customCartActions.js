@@ -55,3 +55,25 @@ export const cartUpdate = () => {
         }
     }
 }
+
+export const cartCheckout = () => {
+    return async (dispatch) => {
+
+        try {
+
+            dispatch(modalActions.onNotify({ id: "checkout" }));
+            const response = await axios.delete(`${API}/cart/clear`);
+            console.log(response.data);
+            dispatch(modalActions.onNotify({ id: "ordered" }));
+            dispatch(cartActions.updateCart({items:[]}))
+
+        } catch (error) {
+            console.log("cart dispatch error", error);
+        } finally {
+            setTimeout(() => {
+                dispatch(modalActions.offNotify());
+                dispatch(modalActions.closeModal());
+            }, 2500)
+        }
+    }
+}
